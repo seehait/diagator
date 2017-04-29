@@ -1,8 +1,8 @@
-package controllers;
+package utilities;
 
+import diagram.Diagram;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
-import main.AppStateManager;
 
 /**
  * Key Handler
@@ -11,42 +11,47 @@ import main.AppStateManager;
  * @since 2017-04-29
  */
 public class KeyHandler implements EventHandler<KeyEvent> {
-    private AppStateManager appStateManager;
+    private Diagram diagram;
 
     /**
      * Constructs an instance.
      *
-     * @param appStateManager appStateManager
+     * @param diagram diagram
      */
-    public KeyHandler(AppStateManager appStateManager) {
-        this.appStateManager = appStateManager;
+    public KeyHandler(Diagram diagram) {
+        this.diagram = diagram;
     }
 
+    /**
+     * Handles key press event.
+     *
+     * @param event event
+     */
     public void handle(KeyEvent event) {
         switch (event.getCode()) {
             case UP:
-                appStateManager.toParent();
+                diagram.toParent();
                 break;
             case DOWN:
-                appStateManager.toChild();
+                diagram.toChild();
                 break;
             case LEFT:
-                appStateManager.toNextSiblings();
+                diagram.toNextSiblings();
                 break;
             case RIGHT:
-                appStateManager.toPreviousSiblings();
+                diagram.toPreviousSiblings();
                 break;
             case SPACE:
-                appStateManager.playAudio();
+                diagram.playLabel();
                 break;
             case TAB:
-                appStateManager.toggleRootSiblingsMode();
+                diagram.toggleRootSiblingsMode();
                 break;
             case ENTER:
-                appStateManager.playInfo();
+                diagram.playInfo();
                 break;
             case ESCAPE:
-                appStateManager.exit();
+                System.exit(0);
                 break;
             default:
                 break;
