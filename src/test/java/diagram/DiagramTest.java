@@ -42,6 +42,7 @@ public class DiagramTest {
 
         underTestNodes[1].addSiblingsFromParent(underTestNodes[0], underTestNodes[2]);
         underTestNodes[1].addSiblingsFromParent(underTestNodes[0], underTestNodes[3]);
+        underTestNodes[2].addSiblingsFromParent(underTestNodes[0], underTestNodes[3]);
     }
 
     @Test
