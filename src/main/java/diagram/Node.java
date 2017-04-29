@@ -36,6 +36,7 @@ public class Node {
         parents.add(parent);
         parent.addChild(this);
         siblingsFromParent.put(parent, new ArrayList<Node>());
+        siblingsFromParent.get(parent).add(this);
         return true;
     }
 
@@ -51,6 +52,7 @@ public class Node {
         childs.add(child);
         child.addParent(this);
         siblingsFromChild.put(child, new ArrayList<Node>());
+        siblingsFromChild.get(child).add(this);
         return true;
     }
 

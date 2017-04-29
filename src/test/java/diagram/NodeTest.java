@@ -97,8 +97,8 @@ public class NodeTest {
         underTest.addParent(nodes[2]);
         underTest.addSiblingsFromParent(nodes[2], nodes[3]);
 
-        Assert.assertEquals(nodes[1], underTest.getSiblingsFromParent(nodes[0]).get(0));
-        Assert.assertEquals(nodes[3], underTest.getSiblingsFromParent(nodes[2]).get(0));
+        Assert.assertEquals(nodes[1], underTest.getSiblingsFromParent(nodes[0]).get(1));
+        Assert.assertEquals(nodes[3], underTest.getSiblingsFromParent(nodes[2]).get(1));
     }
 
     @Test(expected = ParentNotExistedException.class)
@@ -112,7 +112,7 @@ public class NodeTest {
         underTest.addSiblingsFromParent(nodes[0], nodes[1]);
         underTest.addSiblingsFromParent(nodes[0], nodes[1]);
 
-        Assert.assertEquals(1, underTest.getSiblingsFromParent(nodes[0]).size());
+        Assert.assertEquals(2, underTest.getSiblingsFromParent(nodes[0]).size());
     }
 
     @Test
@@ -137,8 +137,8 @@ public class NodeTest {
         underTest.addChild(nodes[2]);
         underTest.addSiblingsFromChild(nodes[2], nodes[3]);
 
-        Assert.assertEquals(nodes[1], underTest.getSiblingsFromChild(nodes[0]).get(0));
-        Assert.assertEquals(nodes[3], underTest.getSiblingsFromChild(nodes[2]).get(0));
+        Assert.assertEquals(nodes[1], underTest.getSiblingsFromChild(nodes[0]).get(1));
+        Assert.assertEquals(nodes[3], underTest.getSiblingsFromChild(nodes[2]).get(1));
     }
 
     @Test(expected = ChildNotExistedException.class)
@@ -152,7 +152,7 @@ public class NodeTest {
         underTest.addSiblingsFromChild(nodes[0], nodes[1]);
         underTest.addSiblingsFromChild(nodes[0], nodes[1]);
 
-        Assert.assertEquals(1, underTest.getSiblingsFromChild(nodes[0]).size());
+        Assert.assertEquals(2, underTest.getSiblingsFromChild(nodes[0]).size());
     }
 
     @Test
@@ -175,7 +175,7 @@ public class NodeTest {
         nodes[1].addParent(nodes[0]);
         underTest.addSiblingsFromParent(nodes[0], nodes[1]);
 
-        Assert.assertEquals(underTest, nodes[1].getSiblingsFromParent(nodes[0]).get(0));
+        Assert.assertEquals(underTest, nodes[1].getSiblingsFromParent(nodes[0]).get(1));
     }
 
     @Test
@@ -184,6 +184,6 @@ public class NodeTest {
         nodes[1].addChild(nodes[0]);
         underTest.addSiblingsFromChild(nodes[0], nodes[1]);
 
-        Assert.assertEquals(underTest, nodes[1].getSiblingsFromChild(nodes[0]).get(0));
+        Assert.assertEquals(underTest, nodes[1].getSiblingsFromChild(nodes[0]).get(1));
     }
 }
