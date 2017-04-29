@@ -1,4 +1,4 @@
-package controllers;
+package utilities;
 
 /**
  * Audio Player
@@ -30,7 +30,7 @@ public class AudioPlayer {
     }
 
     /**
-     * Plays audio
+     * Plays audio.
      *
      * @param text text
      */
