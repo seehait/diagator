@@ -5,11 +5,19 @@ import diagram.Node;
 import java.util.regex.PatternSyntaxException;
 
 /**
- * Created by seehait on 4/29/17.
+ * ParentNotExistedException
+ *
+ * @author Seehait Chockthanyawat
+ * @since 2017-04-29
  */
 public class ParentNotExistedException extends RuntimeException {
     private Node parent;
 
+    /**
+     * Constructs an instance.
+     *
+     * @param parent parent node
+     */
     public ParentNotExistedException(Node parent) {
         this.parent = parent;
     }

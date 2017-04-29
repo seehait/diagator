@@ -5,7 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by seehait on 4/29/17.
+ * DiagramTest
+ *
+ * @author Seehait Chockthanyawat
+ * @since 2017-04-29
  */
 public class DiagramTest {
     private Diagram underTest;
@@ -77,13 +80,13 @@ public class DiagramTest {
         underTest.addRootNode(underTestNodes[0]);
         underTest.toChild();
 
-        underTest.toNextSibling();
+        underTest.toNextSiblings();
         Assert.assertEquals(underTestNodes[2], underTest.getCurrentNode());
 
-        underTest.toNextSibling();
+        underTest.toNextSiblings();
         Assert.assertEquals(underTestNodes[3], underTest.getCurrentNode());
 
-        underTest.toNextSibling();
+        underTest.toNextSiblings();
         Assert.assertEquals(underTestNodes[1], underTest.getCurrentNode());
     }
 }

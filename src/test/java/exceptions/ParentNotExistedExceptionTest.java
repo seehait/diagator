@@ -6,7 +6,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Created by seehait on 4/29/17.
+ * ParentNotExistedExceptionTest
+ *
+ * @author Seehait Chockthanyawat
+ * @since 2017-04-29
  */
 public class ParentNotExistedExceptionTest {
     ParentNotExistedException underTest;

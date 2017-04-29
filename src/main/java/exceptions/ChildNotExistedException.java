@@ -3,11 +3,19 @@ package exceptions;
 import diagram.Node;
 
 /**
- * Created by seehait on 4/29/17.
+ * ChildNotExistedException
+ *
+ * @author Seehait Chockthanyawat
+ * @since 2017-04-29
  */
 public class ChildNotExistedException extends RuntimeException {
     private Node child;
 
+    /**
+     * Constructs an instance.
+     *
+     * @param child child node
+     */
     public ChildNotExistedException(Node child) {
         this.child = child;
     }
