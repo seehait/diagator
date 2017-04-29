@@ -34,6 +34,7 @@ public class Node {
         }
 
         parents.add(parent);
+        parent.addChild(this);
         siblingsFromParent.put(parent, new ArrayList<Node>());
         return true;
     }
@@ -48,6 +49,7 @@ public class Node {
         }
 
         childs.add(child);
+        child.addParent(this);
         siblingsFromChild.put(child, new ArrayList<Node>());
         return true;
     }
@@ -57,8 +59,9 @@ public class Node {
     }
 
     public boolean addSiblingsFromParent(Node parent, Node siblings) {
-        if (parents.contains(parent)) {
+        if (parents.contains(parent) && !siblingsFromParent.get(parent).contains(siblings)) {
             siblingsFromParent.get(parent).add(siblings);
+            siblings.addSiblingsFromParent(parent, this);
             return true;
         }
 
@@ -74,8 +77,9 @@ public class Node {
     }
 
     public boolean addSiblingsFromChild(Node child, Node siblings) {
-        if (childs.contains(child)) {
+        if (childs.contains(child) && !siblingsFromChild.get(child).contains(siblings)) {
             siblingsFromChild.get(child).add(siblings);
+            siblings.addSiblingsFromChild(child, this);
             return true;
         }
 

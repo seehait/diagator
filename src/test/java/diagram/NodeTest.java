@@ -107,6 +107,15 @@ public class NodeTest {
     }
 
     @Test
+    public void NodeShouldHasUniqueSiblingsFromParent() {
+        underTest.addParent(nodes[0]);
+        underTest.addSiblingsFromParent(nodes[0], nodes[1]);
+        underTest.addSiblingsFromParent(nodes[0], nodes[1]);
+
+        Assert.assertEquals(1, underTest.getSiblingsFromParent(nodes[0]).size());
+    }
+
+    @Test
     public void nodeShouldBeAbleToAddSiblingsToExistedChild() {
         underTest.addChild(nodes[0]);
 
@@ -135,5 +144,46 @@ public class NodeTest {
     @Test(expected = ChildNotExistedException.class)
     public void nodeShouldThrowExceptionWhenGetSiblingsFromNotExistedChild() {
         underTest.getSiblingsFromChild(nodes[0]);
+    }
+
+    @Test
+    public void NodeShouldHasUniqueSiblingsFromChild() {
+        underTest.addChild(nodes[0]);
+        underTest.addSiblingsFromChild(nodes[0], nodes[1]);
+        underTest.addSiblingsFromChild(nodes[0], nodes[1]);
+
+        Assert.assertEquals(1, underTest.getSiblingsFromChild(nodes[0]).size());
+    }
+
+    @Test
+    public void nodeShouldAddParentBack() {
+        underTest.addParent(nodes[0]);
+
+        Assert.assertEquals(underTest, nodes[0].getChilds().get(0));
+    }
+
+    @Test
+    public void nodeShouldAddChildBack() {
+        underTest.addChild(nodes[0]);
+
+        Assert.assertEquals(underTest, nodes[0].getParents().get(0));
+    }
+
+    @Test
+    public void nodeShouldAddSiblingsFromParentBack() {
+        underTest.addParent(nodes[0]);
+        nodes[1].addParent(nodes[0]);
+        underTest.addSiblingsFromParent(nodes[0], nodes[1]);
+
+        Assert.assertEquals(underTest, nodes[1].getSiblingsFromParent(nodes[0]).get(0));
+    }
+
+    @Test
+    public void nodeShouldAddSiblingsFromChildBack() {
+        underTest.addChild(nodes[0]);
+        nodes[1].addChild(nodes[0]);
+        underTest.addSiblingsFromChild(nodes[0], nodes[1]);
+
+        Assert.assertEquals(underTest, nodes[1].getSiblingsFromChild(nodes[0]).get(0));
     }
 }
