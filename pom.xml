@@ -17,7 +17,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>App</mainClass>
+							<mainClass>com.seehait.project.diagator.App</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

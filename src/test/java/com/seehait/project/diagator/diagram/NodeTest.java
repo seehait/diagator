@@ -1,7 +1,7 @@
-package diagram;
+package com.seehait.project.diagator.diagram;
 
-import exceptions.ChildNotExistedException;
-import exceptions.ParentNotExistedException;
+import com.seehait.project.diagator.exceptions.ChildNotExistedException;
+import com.seehait.project.diagator.exceptions.ParentNotExistedException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

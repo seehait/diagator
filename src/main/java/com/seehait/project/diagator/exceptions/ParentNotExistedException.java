@@ -1,8 +1,6 @@
-package exceptions;
+package com.seehait.project.diagator.exceptions;
 
-import diagram.Node;
-
-import java.util.regex.PatternSyntaxException;
+import com.seehait.project.diagator.diagram.Node;
 
 /**
  * ParentNotExistedException
