@@ -1,4 +1,4 @@
-package diagram;
+package com.seehait.project.diagator.diagram;
 
 import org.junit.Assert;
 import org.junit.Before;

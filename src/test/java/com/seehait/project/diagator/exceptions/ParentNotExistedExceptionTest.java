@@ -1,6 +1,6 @@
-package exceptions;
+package com.seehait.project.diagator.exceptions;
 
-import diagram.Node;
+import com.seehait.project.diagator.diagram.Node;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

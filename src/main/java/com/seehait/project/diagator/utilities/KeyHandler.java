@@ -1,6 +1,6 @@
-package utilities;
+package com.seehait.project.diagator.utilities;
 
-import diagram.Diagram;
+import com.seehait.project.diagator.diagram.Diagram;
 import javafx.event.EventHandler;
 import javafx.scene.input.KeyEvent;
 
@@ -16,7 +16,7 @@ public class KeyHandler implements EventHandler<KeyEvent> {
     /**
      * Constructs an instance.
      *
-     * @param diagram diagram
+     * @param diagram com.seehait.project.diagator.diagram
      */
     public KeyHandler(Diagram diagram) {
         this.diagram = diagram;

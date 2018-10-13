@@ -1,4 +1,4 @@
-package utilities;
+package com.seehait.project.diagator.utilities;
 
 /**
  * Audio Player

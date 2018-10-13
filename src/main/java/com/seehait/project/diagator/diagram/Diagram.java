@@ -1,8 +1,8 @@
-package diagram;
+package com.seehait.project.diagator.diagram;
 
 import java.util.ArrayList;
 
-import utilities.AudioPlayer;
+import com.seehait.project.diagator.utilities.AudioPlayer;
 
 /**
  * Diagram
