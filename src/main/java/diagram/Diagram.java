@@ -1,8 +1,8 @@
 package diagram;
 
-import utilities.AudioPlayer;
-
 import java.util.ArrayList;
+
+import utilities.AudioPlayer;
 
 /**
  * Diagram
@@ -27,7 +27,7 @@ public class Diagram {
      * Constructs an instance.
      */
     public Diagram() {
-        roots = new ArrayList<Node>();
+        roots = new ArrayList<>();
 
         state = SIBLINGS_BETWEEN_ROOT;
         currentSiblingIndex = 0;
